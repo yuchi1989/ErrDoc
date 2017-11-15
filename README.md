@@ -35,5 +35,6 @@ Open [llvm source folder]/tools/clang/lib/StaticAnalyzer/Checkers/CMakeLists.txt
 4. Build llvm/clang: Inside the build directory, run ```make```.
 5. Run checker on example.c (Use [llvm/clang build folder]/bin/scan-build for projects.):  
 ```[llvm/clang build folder]/bin/clang -cc1 -I/usr/include  -I[path to llvm/clang build folder]/lib/clang/[clang version]/include/ -w -analyze -analyzer-checker=alpha.unix.ErrDocAllPath example.c ``` 
-
+### ErrDoc bugfinder
+### ErrDoc patcher
 to be continued....

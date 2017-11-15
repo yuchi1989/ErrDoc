@@ -9,8 +9,9 @@ Python3
 Clang Libtooling: https://clang.llvm.org/docs/LibASTMatchersTutorial.html    
 Bear: https://github.com/rizsotto/Bear
 ## Source Files
-#### *ErrDocAllPath.cpp*  
-Explore and output all paths of a C program.    
+#### *ErrDocAllPath.cpp*
+Explore and output all paths of a C program.
+[Usage](#errdocallpathcpp-1)
 #### *ErrDocErrPath.cpp*  
 Explore and output error paths of a C program.    
 #### *ErrDocNerrPath.cpp*  

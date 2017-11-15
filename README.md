@@ -9,7 +9,6 @@ Python3
 Clang Libtooling: https://clang.llvm.org/docs/LibASTMatchersTutorial.html    
 Bear: https://github.com/rizsotto/Bear
 ## Source Files:
-### Clang static checker
 #### *ErrDocAllPath.c*  
 Explore and output all paths of a C program.    
 #### *ErrDocErrPath.c*  
@@ -19,6 +18,5 @@ Explore and output non-error paths of a C program.
 #### *ErrDocRR.c* 
 Find RR bugs and output buggy line and bugfix line.    
 
-### Clang libtooling
-
+## Usage and Example:
 to be continued....

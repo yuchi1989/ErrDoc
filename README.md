@@ -20,6 +20,10 @@ Explore and output non-error paths of a C program.
 Find RR bugs and output buggy line and bugfix line. 
 #### *ErrDocEP.cpp* 
 Find EP and EC bugs. 
+#### *RRPatcher.cpp* 
+Patch RR bugs.
+#### *EPPatcher.cpp* 
+Patch EP and EC bugs.
 
 ## Usage and Example
 ### Path exploration

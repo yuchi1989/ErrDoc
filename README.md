@@ -1,7 +1,7 @@
 # ErrDoc
 
 ## Installation
-### Prerequisites for ErrDoc bugfinder
+### Prerequisites for ErrDoc pathexplorer and bugfinder
 CMake    
 Clang and LLVM: http://clang.llvm.org/get_started.html.   
 Python3 
@@ -17,7 +17,9 @@ Explore and output error paths of a C program.
 #### *ErrDocNerrPath.cpp*  
 Explore and output non-error paths of a C program.     
 #### *ErrDocRR.cpp* 
-Find RR bugs and output buggy line and bugfix line.    
+Find RR bugs and output buggy line and bugfix line. 
+#### *ErrDocEP.cpp* 
+Find EP and EC bugs. 
 
 ## Usage and Example
 ### Path exploration

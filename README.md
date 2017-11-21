@@ -72,4 +72,5 @@ Open [llvm source folder]/tools/clang/lib/StaticAnalyzer/Checkers/CMakeLists.txt
 to be continued....
 
 ## Acknowledgements:
+* Clang static analyzer: https://clang-analyzer.llvm.org/
 * EPEx: https://github.com/yujokang/EPEx

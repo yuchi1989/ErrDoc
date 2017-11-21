@@ -13,7 +13,7 @@ Bear: https://github.com/rizsotto/Bear
 Explore and output all paths of a C program.
 [Usage](#errdocallpathcpp-1)
 #### *ErrDocErrPath.cpp*  
-Explore and output error paths of a C program.[Usage](#errdocerrpathcpp-1)
+Explore and output error paths of a C program. [Usage](#errdocerrpathcpp-1)
 #### *ErrDocNerrPath.cpp*  
 Explore and output non-error paths of a C program.     
 #### *ErrDocRR.cpp* 
@@ -39,15 +39,15 @@ Open [llvm source folder]/tools/clang/include/clang/StaticAnalyzer/Checkers/Chec
 3. Register this checker to be compiled:    
 Open [llvm source folder]/tools/clang/lib/StaticAnalyzer/Checkers/CMakeLists.txt, add the line ErrDocAllPath.cpp.
 4. Build llvm/clang: Inside the build directory, run ```make```.
-5. Run checker on example.c (Use [llvm/clang build folder]/bin/scan-build for projects.):  
-```[llvm/clang build folder]/bin/clang -cc1 -I/usr/include  -I[llvm/clang build folder]/lib/clang/[clang version]/include/ -w -analyze -analyzer-checker=alpha.unix.ErrDocAllPath example.c ```
+5. Run checker on pathexample.c (Use [llvm/clang build folder]/bin/scan-build for projects.):  
+```[llvm/clang build folder]/bin/clang -cc1 -I/usr/include  -I[llvm/clang build folder]/lib/clang/[clang version]/include/ -w -analyze -analyzer-checker=alpha.unix.ErrDocAllPath pathexample.c ```
 
 #### *ErrDocErrPath.cpp* 
 1. Edit the following line in the source file.    
       ```#define ERROR_SPEC_NAME "ERR_SPEC_FILE"```    
       Replace the ERR_SPEC_FILE with the absolute path of the error specification file.    
       For example:    
-      ```#define ERROR_SPEC_NAME "/home/user/download/error_spec.txt"```
+      ```#define ERROR_SPEC_NAME "/home/user/download/error_spec.txt"```    
       
 2. Copy this file to [llvm source folder]/tools/clang/lib/StaticAnalyzer/Checkers/
 3. Register the alpha.unix.ErrDocErrPath checker:    
@@ -60,10 +60,10 @@ Open [llvm source folder]/tools/clang/include/clang/StaticAnalyzer/Checkers/Chec
 4. Register this checker to be compiled:    
 Open [llvm source folder]/tools/clang/lib/StaticAnalyzer/Checkers/CMakeLists.txt, add the line ErrDocAllPath.cpp.
 5. Build llvm/clang: Inside the build directory, run ```make```.
-6. Run checker on example.c (Use [llvm/clang build folder]/bin/scan-build for projects.):    
-```echo "malloc, -1, 0, EQ, -1, -1, P" > error_spec.txt"```   
-```echo "__RETURN_VAL__, -1, 0, NE, -1, -1, I" >> error_spec.txt"```   
-```[llvm/clang build folder]/bin/clang -cc1 -I/usr/include  -I[llvm/clang build folder]/lib/clang/[clang version]/include/ -w -analyze -analyzer-checker=alpha.unix.ErrDocErrPath example.c ```   
+6. Run checker on pathexample.c (Use [llvm/clang build folder]/bin/scan-build for projects.):    
+```echo "malloc, -1, 0, EQ, -1, -1, P" > /home/user/download/error_spec.txt```    
+```echo "__RETURN_VAL__, -1, 0, NE, -1, -1, I" >> /home/user/download/error_spec.txt```    
+```[llvm/clang build folder]/bin/clang -cc1 -I/usr/include  -I[llvm/clang build folder]/lib/clang/[clang version]/include/ -w -analyze -analyzer-checker=alpha.unix.ErrDocErrPath pathexample.c ```   
 
 ### ErrDoc bugfinder
 ### ErrDoc patcher

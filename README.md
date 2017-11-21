@@ -13,7 +13,7 @@ Bear: https://github.com/rizsotto/Bear
 Explore and output all paths of a C program.
 [Usage](#errdocallpathcpp-1)
 #### *ErrDocErrPath.cpp*  
-Explore and output error paths of a C program.    
+Explore and output error paths of a C program.[Usage](#errdocerrpathcpp-1)
 #### *ErrDocNerrPath.cpp*  
 Explore and output non-error paths of a C program.     
 #### *ErrDocRR.cpp* 
@@ -44,10 +44,10 @@ Open [llvm source folder]/tools/clang/lib/StaticAnalyzer/Checkers/CMakeLists.txt
 
 #### *ErrDocErrPath.cpp* 
 1. Edit the following line in the source file.    
-      #define ERROR_SPEC_NAME "ERR_SPEC_FILE"    
+      ```#define ERROR_SPEC_NAME "ERR_SPEC_FILE"```    
       Replace the ERR_SPEC_FILE with the absolute path of the error specification file.    
       For example:    
-      #define ERROR_SPEC_NAME "/home/user/download/error_spec.txt"
+      ```#define ERROR_SPEC_NAME "/home/user/download/error_spec.txt"```
       
 2. Copy this file to [llvm source folder]/tools/clang/lib/StaticAnalyzer/Checkers/
 3. Register the alpha.unix.ErrDocErrPath checker:    

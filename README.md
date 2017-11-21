@@ -62,7 +62,7 @@ Open [llvm source folder]/tools/clang/include/clang/StaticAnalyzer/Checkers/Chec
 4. Register this checker to be compiled:    
 Open [llvm source folder]/tools/clang/lib/StaticAnalyzer/Checkers/CMakeLists.txt, add the line ErrDocAllPath.cpp.
 5. Build llvm/clang: Inside the build directory, run ```make```.
-6. Run checker on pathexample.c (Use *[llvm/clang build folder]/bin/scan-build* for projects.):       
+6. Run checker on pathexample.c (Use *[llvm/clang build folder]/bin/scan-build* for projects.):    
 ```echo "malloc, -1, 0, EQ, -1, -1, P" > /home/user/download/error_spec.txt```    
 ```echo "__RETURN_VAL__, -1, 0, NE, -1, -1, I" >> /home/user/download/error_spec.txt```    
 ```[llvm/clang build folder]/bin/clang -cc1 -I/usr/include  -I[llvm/clang build folder]/lib/clang/[clang version]/include/ -w -analyze -analyzer-checker=alpha.unix.ErrDocErrPath pathexample.c ```   

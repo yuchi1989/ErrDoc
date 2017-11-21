@@ -1,5 +1,7 @@
 # ErrDoc
 
+## What is ErrDoc?
+ErrDoc is a tool that is able to detect, categorize and fix error handling bugs for C programs. The technique is described in detail in 2017 FSE paper *Automatically Diagnosing and Repairing Error Handling Bugs in C* by Yuchi Tian and Baishakhi Ray.
 ## Installation
 ### Prerequisites for ErrDoc pathexplorer and bugfinder
 CMake    

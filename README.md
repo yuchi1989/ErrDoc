@@ -12,16 +12,23 @@ Clang Libtooling: https://clang.llvm.org/docs/LibASTMatchersTutorial.html
 Bear: https://github.com/rizsotto/Bear
 ## Source Files
 
-*ErrDocAllPath.cpp*:     Explore and output all paths of a C program. [Usage](#errdocallpathcpp)    
-*ErrDocErrPath.cpp*:     Explore and output error paths of a C program. [Usage](#errdocerrpathcpp)    
-*ErrDocNerrPath.cpp*:    Explore and output non-error paths of a C program.     
+*ErrDocAllPath.cpp*:    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Explore and output all paths of a C program. [Usage](#errdocallpathcpp)    
+*ErrDocErrPath.cpp*:    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Explore and output error paths of a C program. [Usage](#errdocerrpathcpp)    
+*ErrDocNerrPath.cpp*:   &nbsp;&nbsp;&nbsp;&nbsp; Explore and output non-error paths of a C program. <br />    
+*fp_analysis/*:   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Usage and Example](#errdocerrpathcpp)    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Analyze function pairs signatures for C programs, which are used by ErrDocRR.cpp for identifying RR bugs.    
+*fp_analysis/RPEx.cpp*:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Collect all function calls lists for each caller along each error path.      
+*fp_analysis/RPExDatafolw.cpp*:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Using dataflow analysis to remove function pairs that do not have data dependency.   
+ <br />
 *ErrDocRR.cpp*:          Find RR bugs and output buggy line and bugfix line.   
 *ErrDocEP.cpp*:          Find EP and EC bugs.   
 *RRPatcher.cpp*:         Patch RR bugs.    
 *EPPatcher.cpp*:         Patch EP and EC bugs.    
 
 ## Usage and Example
-### Path exploration
+### 1.Path exploration
 #### *ErrDocAllPath.cpp* 
 1. Copy this file to [llvm source folder]/tools/clang/lib/StaticAnalyzer/Checkers/
 2. Register the alpha.unix.ErrDocAllPath checker:    
@@ -60,14 +67,14 @@ Open [llvm source folder]/tools/clang/lib/StaticAnalyzer/Checkers/CMakeLists.txt
 ```echo "__RETURN_VAL__, -1, 0, NE, -1, -1, I" >> /home/user/download/error_spec.txt```    
 ```[llvm/clang build folder]/bin/clang -cc1 -I/usr/include  -I[llvm/clang build folder]/lib/clang/[clang version]/include/ -w -analyze -analyzer-checker=alpha.unix.ErrDocErrPath pathexample.c ```   
 
-### ErrDoc function pairs analysis
+### 2.ErrDoc function pairs analysis
 1. Collect function calls lists along each error path.    
 2. Call extract_function_pairs.py to extract initial function pairs and compute their frequency.    
 3. Call refine_function_pairs.py to rank and refine function pairs.    
 4. Do the dataflow analysis to keep the funtion pairs with data dependency.
 
-### ErrDoc bugfinder
-### ErrDoc patcher
+### 3.ErrDoc bugfinder
+### 4.ErrDoc patcher
 to be continued....
 
 ## Acknowledgements:

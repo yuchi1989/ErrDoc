@@ -30,7 +30,7 @@ Bear: https://github.com/rizsotto/Bear
 ## Usage and Example
 ### 1.Path exploration
 #### Introduction
-The path exploration checkers are tools to traverse paths like error paths or non-error paths, which can be used for further program analysis. The following path exploration checkers can be used for general purpose.
+The path exploration checkers are tools to traverse paths like error paths or non-error paths, which can be used for further program analysis. The following path exploration checkers can be used for general program analysis purpose.
 #### Example
 ##### *ErrDocAllPath.cpp* 
 1. Copy this file to [llvm source folder]/tools/clang/lib/StaticAnalyzer/Checkers/
@@ -72,12 +72,12 @@ Open [llvm source folder]/tools/clang/lib/StaticAnalyzer/Checkers/CMakeLists.txt
 
 ### 2.ErrDoc function pairs analysis
 #### Introduction
-Function pairs analysis can be used to infer functions that work in pairs, for example, malloc and free. With the identified function pairs and corresponding signature, the RR bugs can be identified and fixed.
+Function pairs analysis can be used to infer functions that work in pairs, for example, malloc and free. With the identified function pairs and corresponding signatures, the RR bugs can be identified and fixed.
 #### Methodology
-1. Collect function calls lists along each error path.    
-2. Call extract_function_pairs.py to extract initial function pairs and compute their frequency.    
-3. Call refine_function_pairs.py to rank and refine function pairs.    
-4. Do the dataflow analysis to keep the funtion pairs with data dependency.
+1. Collect function calls lists along each error path.(*RPEx.cpp*)    
+2. Extract initial function pairs and compute their frequency by pairing function calls before target function call with ones after target function call along an error path.(*extract_function_pairs.py*)    
+3. Rank and refine function pairs.(*refine_function_pairs.py*)    
+4. Do the dataflow analysis to discard the funtion pairs that do not have data dependency.(*RPExDataflow.cpp*)
 #### Example
 1. Edit the following line in *RPEx.cpp* to replace the relative path with absolute path    
 ```#define ERROR_SPEC_NAME "fp_analysis/openssl_error_spec.txt"```    

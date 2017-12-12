@@ -67,6 +67,12 @@ Open [llvm source folder]/tools/clang/lib/StaticAnalyzer/Checkers/CMakeLists.txt
 ```echo "__RETURN_VAL__, -1, 0, NE, -1, -1, I" >> /home/user/download/error_spec.txt```    
 ```[llvm/clang build folder]/bin/clang -cc1 -I/usr/include  -I[llvm/clang build folder]/lib/clang/[clang version]/include/ -w -analyze -analyzer-checker=alpha.unix.ErrDocErrPath pathexample.c ```   
 
+### ErrDoc function pairs analysis
+1. Collect function calls lists along each error path.    
+2. Call extract_function_pairs.py to extract initial function pairs and compute their frequency.    
+3. Call refine_function_pairs.py to rank and refine function pairs.    
+4. Do the dataflow analysis to keep the funtion pairs with data dependency.
+
 ### ErrDoc bugfinder
 ### ErrDoc patcher
 to be continued....

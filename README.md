@@ -15,7 +15,7 @@ Bear: https://github.com/rizsotto/Bear
 *ErrDocAllPath.cpp*:    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Explore and output all paths of a C program. [Usage](#errdocallpathcpp)    
 *ErrDocErrPath.cpp*:    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Explore and output error paths of a C program. [Usage](#errdocerrpathcpp)    
 *ErrDocNerrPath.cpp*:   &nbsp;&nbsp;&nbsp;&nbsp; Explore and output non-error paths of a C program. <br />    
-*fp_analysis/*:   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Usage and Example](#errdocerrpathcpp)    
+*fp_analysis/*:   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Usage and Example](#2errdoc-function-pairs-analysis)    
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Analyze function pairs signatures for C programs, which are used by ErrDocRR.cpp for identifying RR bugs.    
 *fp_analysis/RPEx.cpp*:  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Collect all function calls lists for each caller along each error path.      

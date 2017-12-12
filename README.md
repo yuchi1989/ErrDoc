@@ -68,11 +68,27 @@ Open [llvm source folder]/tools/clang/lib/StaticAnalyzer/Checkers/CMakeLists.txt
 ```[llvm/clang build folder]/bin/clang -cc1 -I/usr/include  -I[llvm/clang build folder]/lib/clang/[clang version]/include/ -w -analyze -analyzer-checker=alpha.unix.ErrDocErrPath pathexample.c ```   
 
 ### 2.ErrDoc function pairs analysis
+#### Methodology
 1. Collect function calls lists along each error path.    
 2. Call extract_function_pairs.py to extract initial function pairs and compute their frequency.    
 3. Call refine_function_pairs.py to rank and refine function pairs.    
 4. Do the dataflow analysis to keep the funtion pairs with data dependency.
-
+#### Example
+1. Edit the following line in *RPEx.cpp* to replace the relative path with absolute path    
+```#define ERROR_SPEC_NAME "fp_analysis/openssl_error_spec.txt"```    
+2. Edit the following lines in *RPExDataflow.cpp* to replace the relative path with absolute path    
+```
+#define ERROR_SPEC_NAME "fp_analysis/result/openssl_error_global_spec.txt"
+#define FUNCTION_PAIRS_SPEC "fp_analysis/result/openssl_pair_spec.txt"
+```    
+3. Build both checkers(*RPEx.cpp* and *RPExDataflow.cpp*) the same way as previous path explorer checkers
+4. Pull project openssl and edit the following three lines of file *fp_analysis/fp_analysis.sh*
+```
+home="[absolute path of fp_analysis folder]"
+project="[absolute path for openssl project folder]"
+clang_build="[absolute path for clang build folder]"
+```    
+5.  Run *fp_analysis.sh*    
 ### 3.ErrDoc bugfinder
 ### 4.ErrDoc patcher
 to be continued....

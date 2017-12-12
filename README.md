@@ -11,18 +11,14 @@ Python3
 Clang Libtooling: https://clang.llvm.org/docs/LibASTMatchersTutorial.html    
 Bear: https://github.com/rizsotto/Bear
 ## Source Files
-*ErrDocAllPath.cpp*: Explore and output all paths of a C program. [Usage](#errdocallpathcpp-1)    
-*ErrDocErrPath.cpp*: Explore and output error paths of a C program. [Usage](#errdocerrpathcpp-1)
-#### *ErrDocNerrPath.cpp*  
-Explore and output non-error paths of a C program.     
-#### *ErrDocRR.cpp* 
-Find RR bugs and output buggy line and bugfix line. 
-#### *ErrDocEP.cpp* 
-Find EP and EC bugs. 
-#### *RRPatcher.cpp* 
-Patch RR bugs.
-#### *EPPatcher.cpp* 
-Patch EP and EC bugs.
+
+*ErrDocAllPath.cpp*:     Explore and output all paths of a C program. [Usage](#errdocallpathcpp)    
+*ErrDocErrPath.cpp*:     Explore and output error paths of a C program. [Usage](#errdocerrpathcpp)    
+*ErrDocNerrPath.cpp*:    Explore and output non-error paths of a C program.     
+*ErrDocRR.cpp*:          Find RR bugs and output buggy line and bugfix line.   
+*ErrDocEP.cpp*:          Find EP and EC bugs.   
+*RRPatcher.cpp*:         Patch RR bugs.    
+*EPPatcher.cpp*:         Patch EP and EC bugs.    
 
 ## Usage and Example
 ### Path exploration

@@ -29,7 +29,10 @@ Bear: https://github.com/rizsotto/Bear
 
 ## Usage and Example
 ### 1.Path exploration
-#### *ErrDocAllPath.cpp* 
+#### Introduction
+The path exploration checkers are tools to traverse paths like error paths or non-error paths, which can be used for further program analysis. The following path exploration checkers can be used for general purpose.
+#### Example
+##### *ErrDocAllPath.cpp* 
 1. Copy this file to [llvm source folder]/tools/clang/lib/StaticAnalyzer/Checkers/
 2. Register the alpha.unix.ErrDocAllPath checker:    
 Open [llvm source folder]/tools/clang/include/clang/StaticAnalyzer/Checkers/Checkers.td, look for the block starting with let ParentPackage = UnixAlpha in, and inside it, add the text:
@@ -44,7 +47,7 @@ Open [llvm source folder]/tools/clang/lib/StaticAnalyzer/Checkers/CMakeLists.txt
 5. Run checker on pathexample.c (Use *[llvm/clang build folder]/bin/scan-build* for projects.):    
 ```[llvm/clang build folder]/bin/clang -cc1 -I/usr/include  -I[llvm/clang build folder]/lib/clang/[clang version]/include/ -w -analyze -analyzer-checker=alpha.unix.ErrDocAllPath pathexample.c ```
 
-#### *ErrDocErrPath.cpp* 
+##### *ErrDocErrPath.cpp* 
 1. Edit the following line in the source file.    
       ```#define ERROR_SPEC_NAME "ERR_SPEC_FILE"```    
       Replace the ERR_SPEC_FILE with the absolute path of the error specification file.    
@@ -68,6 +71,8 @@ Open [llvm source folder]/tools/clang/lib/StaticAnalyzer/Checkers/CMakeLists.txt
 ```[llvm/clang build folder]/bin/clang -cc1 -I/usr/include  -I[llvm/clang build folder]/lib/clang/[clang version]/include/ -w -analyze -analyzer-checker=alpha.unix.ErrDocErrPath pathexample.c ```   
 
 ### 2.ErrDoc function pairs analysis
+#### Introduction
+Function pairs analysis can be used to infer functions that work in pairs, for example, malloc and free. With the identified function pairs and corresponding signature, the RR bugs can be identified and fixed.
 #### Methodology
 1. Collect function calls lists along each error path.    
 2. Call extract_function_pairs.py to extract initial function pairs and compute their frequency.    

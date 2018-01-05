@@ -116,6 +116,15 @@ clang_build="[absolute path for clang build folder]"
 cat *.e.log
 python3 ../extract_RR_results.py *.e.log
 ```
+Results:    
+```
+ErrDocRR detects 3 RR bugs
+ErrDocRR: B: left function pair:  malloc, filename: example3.c, caller name: start_malloc, bug line number: 4, source file name: example3.c; bugfix line number: 15, function pair signature: 0:free:1
+ErrDocRR: B: left function pair:  malloc, filename: example3.c, caller name: start_malloc, bug line number: 9, source file name: example3.c; bugfix line number: 15, function pair signature: 0:free:1
+ErrDocRR: B: left function pair:  malloc, filename: example3.c, caller name: start_malloc, bug line number: 4, source file name: example3.c; bugfix line number: 11, function pair signature: 0:free:1
+```
+##### example2(openssl):
+
 ### 4.ErrDoc patcher
 to be continued....
 

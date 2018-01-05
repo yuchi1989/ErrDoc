@@ -112,7 +112,7 @@ clang_build="[absolute path for clang build folder]"
 ```
 2. Run the following commands:    
 ```
-../../../../../build/bin/clang -cc1 -I/usr/include  -I../../../../../build/lib/clang/3.9.0/include/ -w -analyze -analyzer-checker=alpha.unix.ErrDocRR RRexample.c 
+./build/bin/clang -cc1 -I/usr/include  -I./build/lib/clang/3.9.0/include/ -w -analyze -analyzer-checker=alpha.unix.ErrDocRR RRexample.c 
 cat *.e.log
 python3 ../extract_RR_results.py *.e.log
 ```

@@ -10,17 +10,19 @@ int start_malloc(){
 	if(q == NULL) {
 		return -1;
 	}
-	
-	*p = 2;
-	*q = 3;
-	
+	int *k = malloc(sizeof(int));
+	if(k == NULL) {
+		return -1;
+	}
 	free(p);
 	free(q);
-	return 0;
+	free(k);
+
+	return -1;
 }
 
 int main(){
-	start_malloc();		
+	start_malloc();	
 	return 0;
 }
 

@@ -18,7 +18,7 @@ int start_malloc(){
 	free(q);
 	free(k);
 
-	return -1;
+	return 0;
 }
 
 int main(){

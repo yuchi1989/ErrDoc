@@ -95,6 +95,27 @@ clang_build="[absolute path for clang build folder]"
 ```    
 5.  Run *fp_analysis.sh*    
 ### 3.ErrDoc bugfinder
+#### RR bugs detection
+ 
+1. Edit the following lines in *ErrDocRR.cpp*.    
+```
+#define ERROR_SPEC_NAME "[error_spec.txt]"
+#define FUNCTION_PAIRS_SPEC "[function_pairs_spec.txt]"
+```
+
+2. Build and register checker *ErrDocRR.cpp*.   
+##### example1(RR/RRexample.c):
+1. Edit the following lines and build checker *ErrDocRR.cpp*.    
+```
+   #define ERROR_SPEC_NAME "[absolute path of RR/RR_example_error_spec.txt]"
+   #define FUNCTION_PAIRS_SPEC "[absolute path of RR/RR_example_function_pairs_spec.txt]"
+```
+2. Run the following commands:    
+```
+../../../../../build/bin/clang -cc1 -I/usr/include  -I../../../../../build/lib/clang/3.9.0/include/ -w -analyze -analyzer-checker=alpha.unix.ErrDocRR RRexample.c 
+cat *.e.log
+python3 ../extract_RR_results.py *.e.log
+```
 ### 4.ErrDoc patcher
 to be continued....
 

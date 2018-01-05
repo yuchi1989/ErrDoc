@@ -22,7 +22,7 @@ Bear: https://github.com/rizsotto/Bear
 *fp_analysis/RPExDatafolw.cpp*:  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Using dataflow analysis to remove function pairs that do not have data dependency.   
  <br />
-*ErrDocRR.cpp*:          Find RR bugs and output buggy line and bugfix line.   
+*RR/ErrDocRR.cpp*:          Find RR bugs and output buggy line and bugfix line.   
 *ErrDocEP.cpp*:          Find EP and EC bugs.   
 *RRPatcher.cpp*:         Patch RR bugs.    
 *EPPatcher.cpp*:         Patch EP and EC bugs.    

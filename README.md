@@ -125,7 +125,22 @@ ErrDocRR: B: left function pair:  malloc, filename: example3.c, caller name: sta
 ErrDocRR: B: left function pair:  malloc, filename: example3.c, caller name: start_malloc, bug line number: 4, source file name: example3.c; bugfix line number: 11, function pair signature: 0:free:1
 ```
 ##### example2(openssl):
-
+1. Edit the following lines and build checker *ErrDocRR.cpp*.  
+File openssl_error_global_spec.txt and openssl_function_pair_signature_analysis.txt are outputs from previous function pairs analysis. We can also manually created the two files.    
+```
+#define ERROR_SPEC_NAME "fp_analysis/result/openssl_error_global_spec.txt"
+#define FUNCTION_PAIRS_SPEC "fp_analysis/result/openssl_function_pair_signature_analysis.txt"
+```
+2. Run the following commands:    
+```
+cd $openssl
+${clang_build}/bin/scan-build -enable-checker alpha.unix.ErrDocRR -analyze-headers --use-analyzer ${clang_build}/bin/clang ./config 
+${clang_build}/bin/scan-build -enable-checker alpha.unix.ErrDocRR -analyze-headers --use-analyzer ${clang_build}/bin/clang make 
+cd $home
+python3 ./output_gatherer.py ./result/openssl_bugs_analysis.txt $openssl
+cat ./result/openssl_bugs_analysis.txt | grep "O:" |sort -k2n | uniq
+python3 ./extract_RR_results.py ./result/openssl_bugs_analysis.txt | grep "B:" |sort -k2n | uniq > ./result/openssl_bugs.txt
+```
 ### 4.ErrDoc patcher
 to be continued....
 

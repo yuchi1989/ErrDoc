@@ -144,13 +144,13 @@ python3 ./extract_RR_results.py ./result/openssl_bugs_analysis.txt | grep "B:" |
 
 #### EP bugs detection
  
-1. Edit the following lines in *ErrDocRR.cpp*.    
+1. Edit the following lines in *ErrDocEP.cpp*.    
 ```
 #define ERROR_SPEC_NAME "[error_spec.txt]"
 #define TARGET_FUNCTION_ERROR_SPEC_NAME "[target_spec.txt]"
 ```
 
-2. Build and register checker *ErrDocRR.cpp*.   
+2. Build and register checker *ErrDocEP.cpp*.   
 ##### example1(EP/example.c):
 1. Edit the following lines and build checker *ErrDocEP.cpp*.    
 ```

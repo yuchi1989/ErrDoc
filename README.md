@@ -141,6 +141,32 @@ python3 ./output_gatherer.py ./result/openssl_bugs_analysis.txt $openssl
 cat ./result/openssl_bugs_analysis.txt | grep "O:" |sort -k2n | uniq
 python3 ./extract_RR_results.py ./result/openssl_bugs_analysis.txt | grep "B:" |sort -k2n | uniq > ./result/openssl_bugs.txt
 ```
+
+#### EP bugs detection
+ 
+1. Edit the following lines in *ErrDocRR.cpp*.    
+```
+#define ERROR_SPEC_NAME "[error_spec.txt]"
+#define TARGET_FUNCTION_ERROR_SPEC_NAME "[target_spec.txt]"
+```
+
+2. Build and register checker *ErrDocRR.cpp*.   
+##### example1(EP/example.c):
+1. Edit the following lines and build checker *ErrDocEP.cpp*.    
+```
+   #define ERROR_SPEC_NAME "[absolute path of EP/error_spec.txt]"
+   #define TARGET_FUNCTION_ERROR_SPEC_NAME "[absolute path of EP/target_spec.txt]"
+```
+2. Run the following commands:    
+```
+./build/bin/clang -cc1 -I/usr/include  -I./build/lib/clang/3.9.0/include/ -w -analyze -analyzer-checker=alpha.unix.ErrDocEP example.c
+cat *.e.log
+```
+Results:    
+```
+
+
+```
 ### 4.ErrDoc patcher
 to be continued....
 

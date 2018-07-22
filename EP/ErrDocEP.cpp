@@ -16,8 +16,8 @@ using namespace ento;
 using namespace std;
 /* placeholder value for wild-card parameter counts and bounds */
 #define DONT_CARE -1
-#define ERROR_SPEC_NAME "/home/tyc/clang/work/example11/rpex/workflow/test1/error_spec.txt"
-#define TARGET_FUNCTION_ERROR_SPEC_NAME "/home/tyc/clang/work/example11/rpex/workflow/test1/target_spec.txt"
+#define ERROR_SPEC_NAME "[error_spec.txt]"
+#define TARGET_FUNCTION_ERROR_SPEC_NAME "[target_spec.txt]"
 namespace {
 
 struct SymState {

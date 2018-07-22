@@ -857,8 +857,7 @@ void ErrDocEP::checkPreStmt(const ReturnStmt *ret_stmt, CheckerContext &C) const
 		    	
 		    	if(ps!=nullptr){
 					if(ps->isErrorPath()){
-						printMsg("EP bug: " + loc + " \"" + Callername + "\" 
-		    				returns non error when \""+ ps->getTargetFunc() + "\" fails.");
+						printMsg("EP bug: " + loc + " \"" + Callername + "\" returns non error when \""+ ps->getTargetFunc() + "\" fails.");
 		    		}
 		    	}
 		    	

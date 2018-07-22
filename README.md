@@ -164,11 +164,9 @@ cat *.e.log
 ```
 Results:    
 ```
-
-
+ErrDocEP: EP bug: example.c:9:9 "foo" returns non error when "bar" fails.
 ```
 ### 4.ErrDoc patcher
-to be continued....
 
 ## Acknowledgements:
 * Clang static analyzer: https://clang-analyzer.llvm.org/
